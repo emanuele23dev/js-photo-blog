@@ -1,3 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
 body {
     background: url(./img/cork.png);
 }
@@ -12,11 +22,31 @@ header {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
+
 h1 {
     text-align: center;
     font-size: 60px;
 }
 }
+
+main{
+    
+    .container{
+        width: 70%;
+        margin: auto;
+
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.col-4 {
+    width: calc((100% / 12) * 4);
+    padding: 1.5rem;
+}
+
 
 .photos {
     display: flex;
@@ -32,11 +62,9 @@ h1 {
         background-color: white;
 
         .quadrato{
-            width: 200px;
-            height: 200px;
-            background-color: aqua;
+            padding: 0.5rem;
         }
-
+    
         .pin {
             position: absolute;
             display: block;
