@@ -18,7 +18,7 @@ h1 {
 }
 }
 
-.post {
+.photos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -47,10 +47,10 @@ h1 {
     }
 }
 
-.post:hover{
+.photos:hover{
     transform: rotate(10deg) scale(1.1);
 }
 
-.post:hover .pin{
+.photos:hover .pin{
     display: none;
 }
