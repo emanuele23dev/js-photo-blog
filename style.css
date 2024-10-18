@@ -13,3 +13,23 @@ h1 {
     font-size: 60px;
 }
 }
+
+.post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .polaroid{
+        width: calc(100 % 4);
+        margin: 1rem;
+        padding: 1rem;
+        background-color: white;
+
+        .quadrato{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+    }
+}
