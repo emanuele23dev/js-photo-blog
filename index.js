@@ -6,7 +6,12 @@
 
 const rowEl = document.querySelector(".row");
 
-axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
+const overlayEl = document.querySelector(".overlay");
+
+const closeButtonEl = document.querySelector(".button-close");
+
+axios
+  .get("https://jsonplaceholder.typicode.com/photos?_limit=6")
 
   .then((response) => {
     const photos = response.data;
@@ -35,12 +40,22 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
 
             </div>
     </div>
-    `
+    `;
       photoElements += markup;
     });
 
     rowEl.innerHTML = photoElements;
-  })
-  .catch((error) => {
-    console.error(error);
+
+    const photosElements = rowEl.querySelectorAll(".photos");
+
+    photosElements.forEach((photoElement) => {
+      photoElement.addEventListener("click", function() {
+        overlayEl.style.visibility = "visible";
+      });
+    });
+
+    closeButtonEl.addEventListener("click", function() {
+      overlayEl.style.visibility = "hidden";
+    });
+    
   });

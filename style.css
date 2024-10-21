@@ -15,7 +15,7 @@ body {
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1;
 
   .head {
     background: url(./img/wall.png);
@@ -89,4 +89,5 @@ main {
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 100;
+  visibility: hidden;
 }
