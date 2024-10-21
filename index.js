@@ -4,8 +4,6 @@
 // https://jsonplaceholder.typicode.com/photos?_limit=6
 // Studiamo bene la risposta e i dati che ci fornisce iniziando a pensare a come poterli sfruttare.
 
-console.log('ciao');
-
 const rowEl = document.querySelector(".row");
 
 axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")

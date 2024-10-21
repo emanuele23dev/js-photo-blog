@@ -1,84 +1,92 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-img{
-    max-width: 100%;
+img {
+  max-width: 100%;
 }
 
 body {
-    background: url(./img/cork.png);
+  background: url(./img/cork.png);
 }
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    
-.head {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .head {
     background: url(./img/wall.png);
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-}
+  }
 
-h1 {
+  h1 {
     text-align: center;
     font-size: 60px;
-}
+  }
 }
 
-main{
-    
-    .container{
-        width: 70%;
-        margin: auto;
+main {
+  .container {
+    width: 70%;
+    margin: auto;
 
-        .row{
-            display: flex;
-            flex-wrap: wrap;
-        }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
     }
+  }
 }
 
 .col-4 {
-    width: calc((100% / 12) * 4);
-    padding: 1.5rem;
+  width: calc((100% / 12) * 4);
+  padding: 1.5rem;
 }
-
 
 .photos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 50px;
 
-    .polaroid{
-        position: relative;
-        width: calc(100 % 4);
-        margin: 1rem;
-        padding: 1rem;
-        background-color: white;
+  .polaroid {
+    position: relative;
+    width: calc(100 % 4);
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
 
-        .quadrato{
-            padding: 0.5rem;
-        }
-    
-        .pin {
-            position: absolute;
-            display: block;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+    .quadrato {
+      padding: 0.5rem;
     }
+
+    .pin {
+      position: absolute;
+      display: block;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 }
 
-.photos:hover{
-    transform: rotate(10deg) scale(1.1);
+.photos:hover {
+  transform: rotate(10deg) scale(1.1);
 }
 
-.photos:hover .pin{
-    display: none;
+.photos:hover .pin {
+  display: none;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
 }
