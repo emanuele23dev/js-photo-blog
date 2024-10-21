@@ -8,14 +8,7 @@ const rowEl = document.querySelector(".row");
 
 const overlayEl = document.querySelector(".overlay");
 
-const closeButtonEl = document.querySelector(".button-close");
-
-const overlayImgEl = document.querySelector('overlay-img')
-
-
-axios
-  .get("https://jsonplaceholder.typicode.com/photos?_limit=6")
-
+axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
   .then((response) => {
     const photos = response.data;
     console.log(photos);
@@ -23,26 +16,21 @@ axios
     let photoElements = "";
 
     photos.forEach((photo) => {
-      const { id, url, title } = photo;
-      console.log(id, url, title);
+      const { url, title } = photo;
+      console.log(url, title);
 
       const markup = `
-    <div class="col-4 photos">
-        
-            <div class="polaroid">
-
-                <img width="25px" class="pin" src="./img/pin.svg" alt="">
-               
-                <div class="quadrato">
-                    <img src="${url}" alt="">
-                </div>
-                    
-               <div class="text text-center mt-3">
-                <p>${title}</p>
-               </div>
-
-            </div>
-    </div>
+ <div class="col-4 photos">
+     <div class="polaroid">
+        <img width="25px" class="pin" src="./img/pin.svg" alt="">
+        <div class="quadrato">
+          <img src="${url}" alt="">
+        </div>
+        <div class="text text-center mt-3">
+          <p>${title.charAt(0).toUpperCase() + title.slice(1)}</p>
+        </div>
+     </div>
+ </div>
     `;
       photoElements += markup;
     });
@@ -51,16 +39,22 @@ axios
 
     const photosElements = rowEl.querySelectorAll(".photos");
 
-    photosElements.forEach((photoElement) => {
-      photoElement.addEventListener("click", function() {
+    photosElements.forEach((photoElement, index) => {
+      photoElement.addEventListener("click", function () {
         overlayEl.style.visibility = "visible";
+        overlayEl.innerHTML = `
+        <img class="mt-5 mb-5 overlay-img" src="${photos[index].url}" alt="" />
+        <div class="button-close">
+            <button class="btn btn-light mb-5">Close</button>
+        </div>
+    `;
+        const closeButtonEl = overlayEl.querySelector(".button-close button");
+        closeButtonEl.addEventListener("click", () => {
+          overlayEl.style.visibility = "hidden";
+        });
+
       });
-    });
 
-    closeButtonEl.addEventListener("click", function() {
-      overlayEl.style.visibility = "hidden";
     });
-
+    
   });
-
-  
