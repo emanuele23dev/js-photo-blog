@@ -10,6 +10,9 @@ const overlayEl = document.querySelector(".overlay");
 
 const closeButtonEl = document.querySelector(".button-close");
 
+const overlayImgEl = document.querySelector('overlay-img')
+
+
 axios
   .get("https://jsonplaceholder.typicode.com/photos?_limit=6")
 
@@ -20,8 +23,8 @@ axios
     let photoElements = "";
 
     photos.forEach((photo) => {
-      const { url, title } = photo;
-      console.log(url, title);
+      const { id, url, title } = photo;
+      console.log(id, url, title);
 
       const markup = `
     <div class="col-4 photos">
@@ -57,5 +60,7 @@ axios
     closeButtonEl.addEventListener("click", function() {
       overlayEl.style.visibility = "hidden";
     });
-    
+
   });
+
+  

@@ -15,7 +15,7 @@ body {
 header {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 10;
 
   .head {
     background: url(./img/wall.png);
