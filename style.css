@@ -1,15 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+body {
+  background: url(./img/cork.png);
 }
 
 img {
   max-width: 100%;
-}
-
-body {
-  background: url(./img/cork.png);
 }
 
 header {
@@ -26,18 +21,6 @@ header {
   h1 {
     text-align: center;
     font-size: 60px;
-  }
-}
-
-main {
-  .container {
-    width: 70%;
-    margin: auto;
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-    }
   }
 }
 

@@ -8,8 +8,7 @@ const rowEl = document.querySelector(".row");
 
 const overlayEl = document.querySelector(".overlay");
 
-axios
-  .get("https://jsonplaceholder.typicode.com/photos?_limit=6")
+axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
   .then((response) => {
     const photos = response.data;
     console.log(photos);
@@ -38,7 +37,7 @@ axios
 
     rowEl.innerHTML = photoElements;
 
-    const photosElements = rowEl.querySelectorAll(".photos");
+    const photosElements = document.querySelectorAll(".photos");
 
     photosElements.forEach((photoElement, index) => {
       photoElement.addEventListener("click", function () {
