@@ -8,7 +8,8 @@ const rowEl = document.querySelector(".row");
 
 const overlayEl = document.querySelector(".overlay");
 
-axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
+axios
+  .get("https://jsonplaceholder.typicode.com/photos?_limit=6")
   .then((response) => {
     const photos = response.data;
     console.log(photos);
@@ -48,13 +49,12 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
             <button class="btn btn-light mb-5">Close</button>
         </div>
     `;
-        const closeButtonEl = overlayEl.querySelector(".button-close button");
+    
+        const closeButtonEl = document.querySelector(".button-close button");
+
         closeButtonEl.addEventListener("click", () => {
           overlayEl.style.visibility = "hidden";
         });
-
       });
-
     });
-    
   });
